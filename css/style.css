@@ -1,0 +1,116 @@
+body {
+	min-width: 340px;
+	font-family: Trebuchet MS, Arial, sans-serif;
+	font-size: 16px;
+  	line-height: 24px;
+  	font-weight: 400;
+  	color: #283136;	  
+  	background-color: #ffffff;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  -webkit-clip-path: inset(100%);
+
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.container {
+	width: 320px;
+	margin: 0 auto;
+}
+
+.main-page__title {
+	text-align: center;
+}
+
+.service {
+	border: 1px solid red;
+}
+.service__controls {
+	display: flex;
+	justify-content: space-around;
+}
+
+.service__switch {
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+	background-color: white;
+	border: 1px solid yellow;
+}
+
+.service__switch--gas {
+	background-image: url("../img/gas.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.service__switch--electricity {
+	background-image: url("../img/electricity.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.service__switch--water {
+	background-image: url("../img/water.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.service__name {
+	border: 1px solid green;
+}
+
+.service__form {
+	border: 1px solid blue;
+}
+
+.service__indication,
+.service__text {
+	width: 40%;	
+}
+
+.service__text {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.service__indication {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-family: Trebuchet MS, Arial, sans-serif;
+	font-size: 16px;
+  	line-height: 24px;
+  	font-weight: 400;
+  	color: #283136;	  
+  	background-color: #ffffff;
+}
+
+.service__button {
+	width: 100%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-family: Trebuchet MS, Arial, sans-serif;
+	font-size: 16px;
+  	line-height: 24px;
+  	font-weight: 400;
+  	color: #283136;	  
+  	background-color: #ffffff;
+}
