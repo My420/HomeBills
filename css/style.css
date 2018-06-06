@@ -50,7 +50,7 @@ input[type="radio"].visually-hidden {
 	width: 80px;
 	height: 80px;
 	background-color: white;
-	border: 1px solid yellow;
+	border: 1px solid transparent;
 }
 
 .service__switch--gas {
@@ -74,27 +74,49 @@ input[type="radio"].visually-hidden {
 	background-size: contain;
 }
 
-.service__name {
+.service__name {	
+	display: none;
 	border: 1px solid green;
 }
 
 .service__form {
+	display: flex;
+	position: relative;
+	flex-wrap: wrap;
+	align-items: center;
+	padding-top: 30px;
+	padding-bottom: 20px;
 	border: 1px solid blue;
 }
 
-.service__indication,
-.service__text {
-	width: 40%;	
+.service__form:after {
+	content:"текущий";
+	display: inline-block;
+	position: absolute;
+	top: 10px;
+	left: 120px;
+}
+
+.service__form:before {
+	content:"прошлый";
+	display: inline-block;
+	position: absolute;
+	top: 10px;
+	left: 215px;
 }
 
 .service__text {
 	display: inline-block;
+	width: 90px;
 	margin-left: 10px;
+
 }
 
 .service__indication {
+	width: 70px;
 	margin-top: 10px;
 	margin-bottom: 10px;
+	margin-left: 20px;
 	font-family: Trebuchet MS, Arial, sans-serif;
 	font-size: 16px;
   	line-height: 24px;
@@ -103,8 +125,13 @@ input[type="radio"].visually-hidden {
   	background-color: #ffffff;
 }
 
+.service__indication--tarif {
+	width: 165px;
+}
+
 .service__button {
 	width: 100%;
+	margin-top: 20px;
 	padding-top: 5px;
 	padding-bottom: 5px;
 	font-family: Trebuchet MS, Arial, sans-serif;
@@ -113,4 +140,17 @@ input[type="radio"].visually-hidden {
   	font-weight: 400;
   	color: #283136;	  
   	background-color: #ffffff;
+}
+
+
+#radio-water:checked ~ .service .service__switch--water,
+#radio-electricity:checked ~ .service .service__switch--electricity,
+#radio-gas:checked ~ .service .service__switch--gas {
+	border-color: #283136;
+}
+
+#radio-water:checked ~ .service .service__name--water,
+#radio-electricity:checked ~ .service .service__name--electricity,
+#radio-gas:checked ~ .service .service__name--gas {
+	display: block;
 }
