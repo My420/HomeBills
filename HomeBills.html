@@ -10,12 +10,13 @@
   		</head>
 		  <body class="main-page">
         <div class="container">
-          <h1 class="main-page__title">HomeBills</h1>
+          <h1 class="main-page__title visually-hidden">HomeBills</h1>
           <input id="radio-water" class="visually-hidden" type="radio" name="slider" checked>
           <input id="radio-electricity" class="visually-hidden" type="radio" name="slider">
           <input id="radio-gas" class="visually-hidden" type="radio" name="slider">
 
           <section class="service">
+              <h2 class="service__title visually-hidden">Калькулятор услуг</h2>
               <div class="service__controls">
                 <label class="service__switch service__switch--water" for="radio-water"><span class="visually-hidden">Вода</span></label>
                 <label class="service__switch service__switch--electricity" for="radio-electricity"><span class="visually-hidden">Электричество</span></label>
@@ -33,8 +34,8 @@
                   <label class="service__text" for="waterTarif">Тариф</label>
                   <input class="service__indication service__indication--tarif" id="waterTarif" type="text" value="64.96">
                   <label class="service__text" for="waterCost">Итог</label>
-                  <input class="service__indication" id="waterCost" type="text" value="0">
-                  <input class="service__indication" id="waterCostPrev" type="text" value="0">
+                  <input class="service__indication" id="waterCost" type="text" value="0" disabled>
+                  <input class="service__indication" id="waterCostPrev" type="text" value="0" disabled>
                   <button class="service__button" id="buttonWater"><span class="service__button-text">Посчитать</span></button>                    
                 </form>              
               </section>
@@ -46,12 +47,12 @@
                   <input class="service__indication" id="electricity" type="number" value="0">
                   <input class="service__indication" id="electricityPrev" type="number" value="0">
                   <label class="service__text" for="electricityTarif">Тариф</label>
-                  <input class="service__indication service__indication--tarif" id="electricityTarif" type="text" value="auto">
+                  <input class="service__indication service__indication--tarif" id="electricityTarif" type="text" value="" placeholder="auto" disabled>
                   <label class="service__text" for="waterCost">Итог</label>
-                  <input class="service__indication" id="electricityCost" type="text" value="0">
-                  <input class="service__indication" id="electricityCostPrev" type="text" value="0">
+                  <input class="service__indication" id="electricityCost" type="text" value="0" disabled>
+                  <input class="service__indication" id="electricityCostPrev" type="text" value="0" disabled>
                   <button class="service__button" id="buttonElectricity"><span class="service__button-text">Посчитать</span></button>                
-                </form class="service__form">              
+                </form>              
               </section>
 
               <section class="service__name service__name--gas">
@@ -63,17 +64,20 @@
                   <label class="service__text" for="gasTarif">Тариф</label>
                   <input class="service__indication service__indication--tarif" id="gasTarif" type="text" value="4.2017">
                   <label class="service__text" for="waterCost">Итог</label>
-                  <input class="service__indication" id="gasCost" type="text" value=0>
-                  <input class="service__indication" id="gasCostPrev" type="text" value=0>
+                  <input class="service__indication" id="gasCost" type="text" value="0" disabled>
+                  <input class="service__indication" id="gasCostPrev" type="text" value="0" disabled>
                   <button class="service__button" id="buttonGas"><span class="service__button-text">Посчитать</span></button>               
-                </form class="service__form">              
+                </form>              
               </section> 
               <section class="service__name service__name--total">
+                <h2 class="visually-hidden">Общая стоимость услуг</h2>
                 <label class="service__text" for="totalCost">Сумма</label>
-                <input class="service__indication" id="totalCost" type="text">                
+                <input class="service__indication" id="totalCost" type="text" value="0" disabled>
+                <input class="service__indication" id="totalCostPrev" type="text" value="0" disabled>
+                <button class="service__button service__button--short" id="buttonSumm"><span class="service__button-text">Посчитать</span></button>
+                <button class="service__button service__button--short" id="buttonSave"><span class="service__button-text">Сохранить</span></button>             
               </section>           
           </section>
-
         </div>
         <script src="js/main.js"></script>
       </body>

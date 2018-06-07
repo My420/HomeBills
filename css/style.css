@@ -1,5 +1,7 @@
 body {
 	min-width: 340px;
+	margin: 0px;
+	padding: 0px;
 	font-family: Trebuchet MS, Arial, sans-serif;
 	font-size: 16px;
   	line-height: 24px;
@@ -38,14 +40,16 @@ input[type="radio"].visually-hidden {
 }
 
 .service {
-	border: 1px solid red;
+	padding: 10px;	
+	border: 2px solid #29abe2;
 }
+
 .service__controls {
 	display: flex;
 	justify-content: space-around;
 }
 
-.service__switch {
+.service__switch {	
 	display: inline-block;
 	width: 80px;
 	height: 80px;
@@ -54,29 +58,32 @@ input[type="radio"].visually-hidden {
 }
 
 .service__switch--gas {
-	background-image: url("../img/gas.png");
+	background-image: url("../img/gas.svg");
 	background-position: center center;
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-size: 75px 75px;
 }
 
 .service__switch--electricity {
-	background-image: url("../img/electricity.png");
+	background-image: url("../img/electricity.svg");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: contain;
 }
 
 .service__switch--water {
-	background-image: url("../img/water.png");
+	background-image: url("../img/water.svg");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: contain;
 }
 
 .service__name {	
-	display: none;
-	border: 1px solid green;
+	display: none;	
+}
+
+.service__name--total {
+	display: block;	
 }
 
 .service__form {
@@ -84,9 +91,11 @@ input[type="radio"].visually-hidden {
 	position: relative;
 	flex-wrap: wrap;
 	align-items: center;
+	margin-top: -2px;
 	padding-top: 30px;
 	padding-bottom: 20px;
-	border: 1px solid blue;
+	border: 1px solid #29abe2;
+	box-shadow: 0 2px 4px 1px #29abe2;	
 }
 
 .service__form:after {
@@ -94,7 +103,7 @@ input[type="radio"].visually-hidden {
 	display: inline-block;
 	position: absolute;
 	top: 10px;
-	left: 120px;
+	left: 110px;
 }
 
 .service__form:before {
@@ -102,12 +111,12 @@ input[type="radio"].visually-hidden {
 	display: inline-block;
 	position: absolute;
 	top: 10px;
-	left: 215px;
+	left: 205px;
 }
 
 .service__text {
 	display: inline-block;
-	width: 90px;
+	width: 80px;
 	margin-left: 10px;
 
 }
@@ -121,8 +130,15 @@ input[type="radio"].visually-hidden {
 	font-size: 16px;
   	line-height: 24px;
   	font-weight: 400;
-  	color: #283136;	  
+  	text-align: center;
+  	color: #283136;
+  	border: 1px solid #283136;	  
   	background-color: #ffffff;
+}
+
+.service__indication:disabled {
+	background-color: #cbe8f9;
+	border-color: #cbe8f9;
 }
 
 .service__indication--tarif {
@@ -132,25 +148,56 @@ input[type="radio"].visually-hidden {
 .service__button {
 	width: 100%;
 	margin-top: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
 	padding-top: 5px;
 	padding-bottom: 5px;
 	font-family: Trebuchet MS, Arial, sans-serif;
 	font-size: 16px;
   	line-height: 24px;
   	font-weight: 400;
-  	color: #283136;	  
-  	background-color: #ffffff;
+  	color: #283136;  
+  	background-color: #29abe2;
+  	border: none;
+  	box-shadow: 0 -2px 4px 1px #29abe2;
+}
+
+.service__button:active,
+.service__button:hover {
+	background-color: #0589c1;
+}
+
+.service__button--short {
+	width: 40%;
+	margin-left: 20px;
+	margin-right: 0px;
+	margin-bottom: 20px;
 }
 
 
 #radio-water:checked ~ .service .service__switch--water,
 #radio-electricity:checked ~ .service .service__switch--electricity,
 #radio-gas:checked ~ .service .service__switch--gas {
-	border-color: #283136;
+	position: relative;
+	z-index: 2;	
+	box-shadow: 0 -2px 4px 1px #29abe2;
 }
 
 #radio-water:checked ~ .service .service__name--water,
 #radio-electricity:checked ~ .service .service__name--electricity,
 #radio-gas:checked ~ .service .service__name--gas {
 	display: block;
+
+}
+
+.blink {
+	animation-name: blink;
+	animation-duration: 1000ms;
+	animation-timing-function: linear;
+	animation-direction: normal;
+}
+
+@keyframes blink {
+	0% {box-shadow: 0 0 0 0 #29abe2;}
+	100% {box-shadow: 0 0 10px 4px #29abe2;}
 }
