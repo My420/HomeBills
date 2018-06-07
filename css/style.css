@@ -45,8 +45,11 @@ input[type="radio"].visually-hidden {
 }
 
 .service__controls {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-around;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
 }
 
 .service__switch {	
@@ -87,15 +90,21 @@ input[type="radio"].visually-hidden {
 }
 
 .service__form {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	position: relative;
-	flex-wrap: wrap;
-	align-items: center;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	margin-top: -2px;
 	padding-top: 30px;
 	padding-bottom: 20px;
 	border: 1px solid #29abe2;
-	box-shadow: 0 2px 4px 1px #29abe2;	
+	-webkit-box-shadow: 0 2px 4px 1px #29abe2;
+	        box-shadow: 0 2px 4px 1px #29abe2;	
 }
 
 .service__form:after {
@@ -159,7 +168,8 @@ input[type="radio"].visually-hidden {
   	color: #283136;  
   	background-color: #29abe2;
   	border: none;
-  	box-shadow: 0 -2px 4px 1px #29abe2;
+  	-webkit-box-shadow: 0 -2px 4px 1px #29abe2;
+  	        box-shadow: 0 -2px 4px 1px #29abe2;
 }
 
 .service__button:active,
@@ -180,7 +190,8 @@ input[type="radio"].visually-hidden {
 #radio-gas:checked ~ .service .service__switch--gas {
 	position: relative;
 	z-index: 2;	
-	box-shadow: 0 -2px 4px 1px #29abe2;
+	-webkit-box-shadow: 0 -2px 4px 1px #29abe2;	
+	        box-shadow: 0 -2px 4px 1px #29abe2;
 }
 
 #radio-water:checked ~ .service .service__name--water,
@@ -191,13 +202,22 @@ input[type="radio"].visually-hidden {
 }
 
 .blink {
-	animation-name: blink;
-	animation-duration: 1000ms;
-	animation-timing-function: linear;
-	animation-direction: normal;
+	-webkit-animation-name: blink;
+	        animation-name: blink;
+	-webkit-animation-duration: 1000ms;
+	        animation-duration: 1000ms;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+	-webkit-animation-direction: normal;
+	        animation-direction: normal;
+}
+
+@-webkit-keyframes blink {
+	0% {-webkit-box-shadow: 0 0 0 0 #29abe2;box-shadow: 0 0 0 0 #29abe2;}
+	100% {-webkit-box-shadow: 0 0 10px 4px #29abe2;box-shadow: 0 0 10px 4px #29abe2;}
 }
 
 @keyframes blink {
-	0% {box-shadow: 0 0 0 0 #29abe2;}
-	100% {box-shadow: 0 0 10px 4px #29abe2;}
+	0% {-webkit-box-shadow: 0 0 0 0 #29abe2;box-shadow: 0 0 0 0 #29abe2;}
+	100% {-webkit-box-shadow: 0 0 10px 4px #29abe2;box-shadow: 0 0 10px 4px #29abe2;}
 }
