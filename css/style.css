@@ -129,6 +129,10 @@ input[type="radio"].visually-hidden {
 	margin-left: 10px;
 
 }
+.service__text--electricity {	
+	width: 100%;
+	text-align: center;
+}
 
 .service__indication {
 	width: 70px;

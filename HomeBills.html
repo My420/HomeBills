@@ -6,7 +6,7 @@
     		<meta name="description" content="Расчет стоимости услуг потребления, на основе показаний счетчика">
    			<meta name="keywords" content="расчет тарифов, расчет стоимости тарифов, расчет коммунальных услуг">
         <meta name="viewport" content="width=device-width, initial-scale=1">    			    
-		    <link rel="stylesheet" type="text/css" href="css/style-min.css">		       
+		    <link rel="stylesheet" type="text/css" href="css/style.css">		       
   		</head>
 		  <body class="main-page">
         <div class="container">
@@ -46,8 +46,16 @@
                   <label class="service__text" for="electricity">Показания</label>
                   <input class="service__indication" id="electricity" type="number" value="0">
                   <input class="service__indication" id="electricityPrev" type="number" value="0">
-                  <label class="service__text" for="electricityTarif">Тариф</label>
-                  <input class="service__indication service__indication--tarif" id="electricityTarif" type="text" value="" placeholder="auto" disabled>
+                  <label class="service__text service__text--electricity">Тариф</label>
+                  <input class="service__indication service__screen" id="electrNumber1" type="text" value="0" placeholder="auto" disabled>
+                  <input class="service__indication service__screen" id="electrTarif1" type="text" value="2.43" placeholder="auto" disabled>
+                  <input class="service__indication service__screen" id="electrCost1" type="text" value="0" placeholder="auto" disabled>
+                  <input class="service__indication service__screen" id="electrNumber2" type="text" value="0" placeholder="auto" disabled>
+                  <input class="service__indication service__screen" id="electrTarif2" type="text" value="3.04" placeholder="auto" disabled>
+                  <input class="service__indication service__screen" id="electrCost2" type="text" value="0" placeholder="auto" disabled>
+                  <input class="service__indication service__screen" id="electrNumber3" type="text" value="0" placeholder="auto" disabled>
+                  <input class="service__indication service__screen" id="electrTarif3" type="text" value="4.95" placeholder="auto" disabled>
+                  <input class="service__indication service__screen" id="electrCost3" type="text" value="0" placeholder="auto" disabled>
                   <label class="service__text" for="waterCost">Итог</label>
                   <input class="service__indication" id="electricityCost" type="text" value="0" disabled>
                   <input class="service__indication" id="electricityCostPrev" type="text" value="0" disabled>
@@ -79,6 +87,6 @@
               </section>           
           </section>
         </div>
-        <script src="js/main-min.js"></script>
+        <script src="js/main.js"></script>
       </body>
   </html>

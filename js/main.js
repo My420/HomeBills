@@ -17,6 +17,12 @@ var electricityTarif = document.querySelector("#electricityTarif");
 var electricityCost = document.querySelector("#electricityCost");
 var electricityCosPrev = document.querySelector("#electricityCostPrev");
 var buttonElectricity= document.querySelector("#buttonElectricity" );
+var elAmount1 = document.querySelector("#electrNumber1");
+var elCost1 = document.querySelector("#electrCost1");
+var elAmount2 = document.querySelector("#electrNumber2");
+var elCost2 = document.querySelector("#electrCost2");
+var elAmount3 = document.querySelector("#electrNumber3");
+var elCost3 = document.querySelector("#electrCost3");
 
 
 var gasNew = document.querySelector("#gas");
@@ -60,14 +66,29 @@ var getPrevValue = function() {
 };
 
 var findElectricityTarif = function() {
-	
-		if (currentValue.new - currentValue.prev <= 150){
-			return 2.43;
-		} else if(currentValue.new - currentValue.prev <= 800) {
-			return 3.04;
-		} else {
-			return 4.95;
-		};	
+	var calcItems = [0, 0, 0];
+	var amount = currentValue.new - currentValue.prev;
+	 if(amount <= 150) {
+	 	calcItems = [amount, 0, 0];
+	 } else if (amount <= 800) {
+	 	calcItems = [150, amount - 150, 0];
+	 } else {
+	 	calcItems = [150, 650, amount - 800]
+	 };
+	 return calcItems;	
+};
+
+var calcElectricityCost = function(indication) {
+	var result1 = +((indication[0] * 2.43).toFixed(2));	
+	elAmount1.value = indication[0];
+	elCost1.value = result1;
+	var result2 = +((indication[1] * 3.04).toFixed(2));
+	elAmount2.value = indication[1];
+	elCost2.value = result2;
+	var result3 = +((indication[2] * 4.95).toFixed(2));
+	elAmount3.value = indication[2];
+	elCost3.value = result3;
+	return result1 + result2 + result3;
 };
 
 var calcValue = function (text) {	  
@@ -82,10 +103,8 @@ var calcValue = function (text) {
 		case "electricity":
 		currentValue.new = (+electricityNew.value);		
 		currentValue.prev = (+electricityPrev.value);
-		currentValue.tarif = findElectricityTarif();
-		currentValue.cost = ((currentValue.new - currentValue.prev) * currentValue.tarif).toFixed(2);
-		electricityCost.value = currentValue.cost;
-		electricityTarif.value = currentValue.tarif;
+		currentValue.cost = calcElectricityCost(findElectricityTarif());
+		electricityCost.value = currentValue.cost;	
 		break;
 		case "gas":
 		currentValue.new = (+gasNew.value);		
