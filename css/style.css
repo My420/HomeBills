@@ -123,6 +123,14 @@ input[type="radio"].visually-hidden {
 	left: 205px;
 }
 
+.service__form--electricity:after {
+	left: 114px;
+}
+
+.service__form--electricity:before {
+	left: 211px;
+}
+
 .service__text {
 	display: inline-block;
 	width: 80px;
@@ -186,6 +194,23 @@ input[type="radio"].visually-hidden {
 	margin-left: 20px;
 	margin-right: 0px;
 	margin-bottom: 20px;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;	
+}
+
+.wrapper__amount {
+	order: 1;
+}
+
+.wrapper__total {
+	order: 2;
+}
+
+.wrapper__tarif {
+	order: 3;
 }
 
 
